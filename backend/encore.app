@@ -1,0 +1,1 @@
+{"id": "trend-analyzer-platform-8ph2", "lang": "typescript"}
