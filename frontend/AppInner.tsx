@@ -39,10 +39,10 @@ export default function AppInner() {
               />
               
               {currentAnalysis && (
-                <>
+                <div className="space-y-8">
                   <TrendChart analysis={currentAnalysis} />
                   <RelatedQueries analysis={currentAnalysis} />
-                </>
+                </div>
               )}
             </div>
             
