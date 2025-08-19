@@ -6,7 +6,7 @@ import { TrendSearchRequest, TrendSearchResponse, TrendDataPoint, RelatedQuery }
 export const search = api<TrendSearchRequest, TrendSearchResponse>(
   { expose: true, method: "POST", path: "/trends/search" },
   async (req) => {
-    const { keyword, platform, region = 'US', timeframe = '12-m' } = req;
+    const { keyword, platform, region = 'ID', timeframe = '12-m' } = req;
 
     try {
       // Insert search record

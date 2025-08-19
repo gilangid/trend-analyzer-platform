@@ -2,7 +2,7 @@ CREATE TABLE trend_searches (
   id BIGSERIAL PRIMARY KEY,
   keyword TEXT NOT NULL,
   platform TEXT NOT NULL CHECK (platform IN ('google', 'tiktok', 'instagram')),
-  region TEXT DEFAULT 'US',
+  region TEXT DEFAULT 'ID',
   timeframe TEXT DEFAULT '12-m',
   search_date TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
