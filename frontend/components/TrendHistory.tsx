@@ -3,7 +3,8 @@ import { useQuery } from '@tanstack/react-query';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { History, Clock, Search, TrendingUp } from 'lucide-react';
+import { ClockIcon, MagnifyingGlassIcon, ArrowTrendingUpIcon } from '@heroicons/react/24/outline';
+import { ClockIcon as ClockIconSolid } from '@heroicons/react/24/solid';
 import { cn } from '@/lib/utils';
 import backend from '~backend/client';
 import type { TrendAnalysis } from '~backend/trends/types';
@@ -41,7 +42,7 @@ export default function TrendHistory({ onSelectAnalysis }: TrendHistoryProps) {
       <CardHeader className="pb-4">
         <CardTitle className="flex items-center space-x-3">
           <div className="w-10 h-10 bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg flex items-center justify-center">
-            <History className="w-5 h-5 text-white" />
+            <ClockIconSolid className="w-5 h-5 text-white" />
           </div>
           <div>
             <h3 className="text-lg font-bold text-gray-900">Recent Searches</h3>
@@ -64,7 +65,7 @@ export default function TrendHistory({ onSelectAnalysis }: TrendHistoryProps) {
         {error && (
           <div className="text-center py-12">
             <div className="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center">
-              <TrendingUp className="w-8 h-8 text-red-500" />
+              <ArrowTrendingUpIcon className="w-8 h-8 text-red-500" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Failed to load</h3>
             <p className="text-gray-500">Unable to load search history</p>
@@ -85,14 +86,14 @@ export default function TrendHistory({ onSelectAnalysis }: TrendHistoryProps) {
                   <div className="flex items-center justify-between w-full">
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center group-hover:from-gray-200 group-hover:to-gray-300 transition-all duration-200">
-                        <Search className="w-5 h-5 text-gray-600" />
+                        <MagnifyingGlassIcon className="w-5 h-5 text-gray-600" />
                       </div>
                       <div className="text-left">
                         <div className="font-semibold text-gray-900 truncate group-hover:text-gray-700 transition-colors">
                           {analysis.keyword}
                         </div>
                         <div className="flex items-center space-x-2 text-sm text-gray-500">
-                          <Clock className="w-3 h-3" />
+                          <ClockIcon className="w-3 h-3" />
                           <span>{formatDate(analysis.searchDate)}</span>
                         </div>
                       </div>
@@ -118,7 +119,7 @@ export default function TrendHistory({ onSelectAnalysis }: TrendHistoryProps) {
             {data.length === 0 && (
               <div className="text-center py-12">
                 <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
-                  <History className="w-8 h-8 text-gray-400" />
+                  <ClockIconSolid className="w-8 h-8 text-gray-400" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">No search history</h3>
                 <p className="text-gray-500">

@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Flame, TrendingUp, Crown, Activity } from 'lucide-react';
+import { FireIcon, ArrowTrendingUpIcon, ChartBarIcon, StarIcon } from '@heroicons/react/24/outline';
 import { cn } from '@/lib/utils';
 import backend from '~backend/client';
 
@@ -23,9 +23,9 @@ export default function PopularTrends() {
   };
 
   const getRankIcon = (index: number) => {
-    if (index === 0) return <Crown className="w-4 h-4 text-yellow-500" />;
-    if (index === 1) return <Crown className="w-4 h-4 text-gray-400" />;
-    if (index === 2) return <Crown className="w-4 h-4 text-amber-600" />;
+    if (index === 0) return <StarIcon className="w-4 h-4 text-yellow-500" />;
+    if (index === 1) return <StarIcon className="w-4 h-4 text-gray-400" />;
+    if (index === 2) return <StarIcon className="w-4 h-4 text-amber-600" />;
     return null;
   };
 
@@ -41,7 +41,7 @@ export default function PopularTrends() {
       <CardHeader className="pb-4">
         <CardTitle className="flex items-center space-x-3">
           <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
-            <Flame className="w-5 h-5 text-white" />
+            <FireIcon className="w-5 h-5 text-white" />
           </div>
           <div>
             <h3 className="text-lg font-bold text-gray-900">Popular Trends</h3>
@@ -64,7 +64,7 @@ export default function PopularTrends() {
         {error && (
           <div className="text-center py-12">
             <div className="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center">
-              <Flame className="w-8 h-8 text-red-500" />
+              <FireIcon className="w-8 h-8 text-red-500" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Failed to load</h3>
             <p className="text-gray-500">Unable to load popular trends</p>
@@ -95,7 +95,7 @@ export default function PopularTrends() {
                         {trend.keyword}
                       </div>
                       <div className="flex items-center space-x-2 text-sm text-gray-500">
-                        <Activity className="w-3 h-3" />
+                        <ChartBarIcon className="w-3 h-3" />
                         <span className="font-medium">{trend.searchCount} searches</span>
                         {index < 3 && (
                           <Badge variant="secondary" className="bg-orange-100 text-orange-700 text-xs px-2 py-0.5">
@@ -125,7 +125,7 @@ export default function PopularTrends() {
             {data.length === 0 && (
               <div className="text-center py-12">
                 <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
-                  <TrendingUp className="w-8 h-8 text-gray-400" />
+                  <ArrowTrendingUpIcon className="w-8 h-8 text-gray-400" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">No trends available</h3>
                 <p className="text-gray-500">

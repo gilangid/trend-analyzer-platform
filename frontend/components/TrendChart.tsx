@@ -2,7 +2,7 @@ import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { TrendingUp, Calendar, MapPin, Activity, BarChart3 } from 'lucide-react';
+import { ArrowTrendingUpIcon, CalendarIcon, MapPinIcon, ChartBarIcon, PresentationChartLineIcon } from '@heroicons/react/24/outline';
 import { cn } from '@/lib/utils';
 import type { TrendAnalysis } from '~backend/trends/types';
 
@@ -27,21 +27,21 @@ export default function TrendChart({ analysis }: TrendChartProps) {
     {
       label: 'Peak Interest',
       value: maxValue,
-      icon: TrendingUp,
+      icon: ArrowTrendingUpIcon,
       color: 'text-green-600',
       bgColor: 'bg-green-100',
     },
     {
       label: 'Average Interest',
       value: avgValue,
-      icon: Activity,
+      icon: PresentationChartLineIcon,
       color: 'text-blue-600',
       bgColor: 'bg-blue-100',
     },
     {
       label: 'Lowest Point',
       value: minValue,
-      icon: BarChart3,
+      icon: ChartBarIcon,
       color: 'text-orange-600',
       bgColor: 'bg-orange-100',
     },
@@ -53,7 +53,7 @@ export default function TrendChart({ analysis }: TrendChartProps) {
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center space-x-3">
             <div className={cn("w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br", platformConfig.gradient)}>
-              <TrendingUp className="w-5 h-5 text-white" />
+              <ArrowTrendingUpIcon className="w-5 h-5 text-white" />
             </div>
             <div>
               <h3 className="text-xl font-bold text-gray-900">Trend Analysis</h3>
@@ -71,15 +71,15 @@ export default function TrendChart({ analysis }: TrendChartProps) {
         
         <div className="flex items-center space-x-6 text-sm text-gray-600">
           <div className="flex items-center space-x-2">
-            <MapPin className="w-4 h-4" />
+            <MapPinIcon className="w-4 h-4" />
             <span className="font-medium">{analysis.region}</span>
           </div>
           <div className="flex items-center space-x-2">
-            <Calendar className="w-4 h-4" />
+            <CalendarIcon className="w-4 h-4" />
             <span className="font-medium">{analysis.timeframe}</span>
           </div>
           <div className="flex items-center space-x-2">
-            <Activity className="w-4 h-4" />
+            <PresentationChartLineIcon className="w-4 h-4" />
             <span className="font-medium">{analysis.data.length} data points</span>
           </div>
         </div>

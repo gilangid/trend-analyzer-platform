@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Loader2, Sparkles, Globe } from 'lucide-react';
+import { MagnifyingGlassIcon, ArrowPathIcon, SparklesIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -106,9 +106,9 @@ const countries = [
 ];
 
 const platforms = [
-  { value: 'google', label: 'Google', icon: Globe, color: 'from-blue-500 to-blue-600' },
-  { value: 'tiktok', label: 'TikTok', icon: Sparkles, color: 'from-pink-500 to-red-500' },
-  { value: 'instagram', label: 'Instagram', icon: Search, color: 'from-purple-500 to-pink-500' },
+  { value: 'google', label: 'Google', icon: GlobeAltIcon, color: 'from-blue-500 to-blue-600' },
+  { value: 'tiktok', label: 'TikTok', icon: SparklesIcon, color: 'from-pink-500 to-red-500' },
+  { value: 'instagram', label: 'Instagram', icon: MagnifyingGlassIcon, color: 'from-purple-500 to-pink-500' },
 ];
 
 export default function SearchForm({ onSearchStart, onAnalysisComplete, isLoading }: SearchFormProps) {
@@ -169,7 +169,7 @@ export default function SearchForm({ onSearchStart, onAnalysisComplete, isLoadin
           <CardTitle className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                <Search className="w-5 h-5 text-white" />
+                <MagnifyingGlassIcon className="w-5 h-5 text-white" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-gray-900">Search Trends</h3>
@@ -194,7 +194,7 @@ export default function SearchForm({ onSearchStart, onAnalysisComplete, isLoadin
                 className="text-lg h-14 pl-12 pr-4 border-2 border-gray-200 focus:border-purple-500 rounded-xl transition-all duration-200"
                 disabled={isLoading}
               />
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <MagnifyingGlassIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -263,12 +263,12 @@ export default function SearchForm({ onSearchStart, onAnalysisComplete, isLoadin
             >
               {isLoading ? (
                 <>
-                  <Loader2 className="w-5 h-5 mr-3 animate-spin" />
+                  <ArrowPathIcon className="w-5 h-5 mr-3 animate-spin" />
                   Analyzing trends...
                 </>
               ) : (
                 <>
-                  <Search className="w-5 h-5 mr-3" />
+                  <MagnifyingGlassIcon className="w-5 h-5 mr-3" />
                   Analyze Trends
                 </>
               )}

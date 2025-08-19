@@ -1,5 +1,5 @@
 import React from 'react';
-import { TrendingUp, Search, BarChart3, Menu } from 'lucide-react';
+import { ChartBarIcon, MagnifyingGlassIcon, Bars3Icon } from '@heroicons/react/24/outline';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -10,7 +10,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-3 animate-fade-in">
             <div className="w-10 h-10 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 rounded-xl flex items-center justify-center shadow-lg hover-lift">
-              <TrendingUp className="w-6 h-6 text-white" />
+              <ChartBarIcon className="w-6 h-6 text-white" />
             </div>
             <div>
               <h1 className="text-xl font-bold gradient-text">TrendScope</h1>
@@ -24,7 +24,7 @@ export default function Header() {
               size="sm"
               className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100/50 transition-all duration-200"
             >
-              <Search className="w-4 h-4" />
+              <MagnifyingGlassIcon className="w-4 h-4" />
               <span>Search</span>
             </Button>
             <Button 
@@ -32,13 +32,13 @@ export default function Header() {
               size="sm"
               className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100/50 transition-all duration-200"
             >
-              <BarChart3 className="w-4 h-4" />
+              <ChartBarIcon className="w-4 h-4" />
               <span>Analytics</span>
             </Button>
           </nav>
 
           <Button variant="ghost" size="sm" className="md:hidden">
-            <Menu className="w-5 h-5" />
+            <Bars3Icon className="w-5 h-5" />
           </Button>
         </div>
       </div>

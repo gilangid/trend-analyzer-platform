@@ -1,5 +1,5 @@
 import React from 'react';
-import { TrendingUp, Globe, Instagram, Music, Sparkles, ArrowDown } from 'lucide-react';
+import { ChartBarIcon, GlobeAltIcon, CameraIcon, MusicalNoteIcon, SparklesIcon, ArrowDownIcon } from '@heroicons/react/24/outline';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center animate-fade-in">
           <Badge variant="secondary" className="mb-6 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 border-0 animate-bounce-in">
-            <Sparkles className="w-3 h-3 mr-1" />
+            <SparklesIcon className="w-3 h-3 mr-1" />
             Powered by Real-Time Data
           </Badge>
           
@@ -27,7 +27,7 @@ export default function Hero() {
           <div className="flex justify-center items-center space-x-12 mb-16">
             <div className="flex items-center space-x-3 text-gray-600 hover:text-blue-600 transition-colors duration-200 hover-lift">
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                <Globe className="w-6 h-6 text-blue-600" />
+                <GlobeAltIcon className="w-6 h-6 text-blue-600" />
               </div>
               <div className="text-left">
                 <div className="font-semibold">Google</div>
@@ -37,7 +37,7 @@ export default function Hero() {
             
             <div className="flex items-center space-x-3 text-gray-600 hover:text-pink-600 transition-colors duration-200 hover-lift">
               <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
-                <Music className="w-6 h-6 text-pink-600" />
+                <MusicalNoteIcon className="w-6 h-6 text-pink-600" />
               </div>
               <div className="text-left">
                 <div className="font-semibold">TikTok</div>
@@ -47,7 +47,7 @@ export default function Hero() {
             
             <div className="flex items-center space-x-3 text-gray-600 hover:text-purple-600 transition-colors duration-200 hover-lift">
               <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                <Instagram className="w-6 h-6 text-purple-600" />
+                <CameraIcon className="w-6 h-6 text-purple-600" />
               </div>
               <div className="text-left">
                 <div className="font-semibold">Instagram</div>
@@ -62,7 +62,7 @@ export default function Hero() {
             onClick={() => document.getElementById('search-section')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Start Analyzing
-            <ArrowDown className="w-5 h-5 ml-2" />
+            <ArrowDownIcon className="w-5 h-5 ml-2" />
           </Button>
         </div>
       </div>
